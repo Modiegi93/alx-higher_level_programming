@@ -12,5 +12,5 @@ if (isNaN(size)) {
       square += 'X';
     }
     console.log(square);
-}
+  }
 }
