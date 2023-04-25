@@ -6,16 +6,10 @@ const fs = require('fs');
 const url = process.argv[2];
 const filePath = process.argv[3];
 
-request.get(url, (err, res, body) => {
-  if (err) {
-    console.error(err);
-    return;
-  }
-  fs.writeFile(filePath, body, 'utf8', (err) => {
+request(url, function (_err, _res, body) {
+  fs.writeFile(filePath, body, 'utf8', function (err) {
     if (err) {
-      console.error(err);
-      return;
+      console.log(err);
     }
-    console.log(filePath);
   });
 });
